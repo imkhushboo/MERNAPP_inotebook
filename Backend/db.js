@@ -1,14 +1,14 @@
-const mongoose=require('mongoose');
-const mongourl="mongodb://127.0.0.1:27017/inotebook";
+const mongoose = require('mongoose');
+const mongourl = "mongodb+srv://vkhushboo540:Tiaragill_14@cluster0.kmoi2nf.mongodb.net/";
 
-const connectTomongo=async()=>{
-    try{
-        const con=mongoose.connect(mongourl);
-            console.log("connected!!");
+const connectTomongo = async () => {
+    try {
+        const con = mongoose.connect(mongourl);
+        console.log("connected!!");
     }
-    catch(err){
+    catch (err) {
         console.error("error!!!");
     };
 }
 
-module.exports=connectTomongo;
+module.exports = connectTomongo;
