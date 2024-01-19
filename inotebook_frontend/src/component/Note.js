@@ -9,6 +9,7 @@ const Note = () => {
     const { notes, getnotes } = useContext(NotesContext);
     const navigate = useNavigate();
     useEffect(() => {
+        console.log(notes);
         if (localStorage.getItem('token')) {
             getnotes();
         }

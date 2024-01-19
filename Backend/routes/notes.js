@@ -68,7 +68,7 @@ router.put("/update/:id", fetchUser, async (req, res) => {
         if (!note) res.status(404).send("not exists");
 
         if (note.user.toString() !== req.user.id) {
-            req.status.status(401).send("error");
+            res.status(401).send("error");
         }
 
         note = await Notes.findByIdAndUpdate(
@@ -90,7 +90,7 @@ router.delete("/delete/:id", fetchUser, async (req, res) => {
         if (!note) return res.status(404).send("not exists");
 
         if (note.user.toString() !== req.user.id) {
-            return req.status.status(401).send("error");
+            return res.status(401).send("error");
         }
         console.log("nhi ho paya delet!");
         note = await Notes.findByIdAndDelete(req.params.id);
